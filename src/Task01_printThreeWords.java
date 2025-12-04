@@ -4,9 +4,11 @@ public class Task01_printThreeWords {
     public static void main(String[] args) {
         printThreeWords();
     }
+
     public static void printThreeWords() {
-        System.out.println("Banana");
-        System.out.println("Orange");
-        System.out.println("Apple");
+        String[] fruits = {"Orange", "Banana", "Apple"};
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
     }
 }
