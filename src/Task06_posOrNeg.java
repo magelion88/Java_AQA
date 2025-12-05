@@ -10,7 +10,7 @@ public class Task06_posOrNeg {
     public static void posOrNeg(int a) {
         if (a >= 0)
             System.out.println("Число положительное");
-    else
+        else
             System.out.println("Число отрицательное");
 
     }
