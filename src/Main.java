@@ -16,6 +16,7 @@ public class Main {
         massive();
         System.out.println(Arrays.toString(createAndFillArray()));
         matrix(3);
+        createArray(5,10);
     }
 
     public static void printThreeWords() {
@@ -126,4 +127,18 @@ public class Main {
         return new int[0];
     }
 
+    public static int[] createArray(int len, int initialValue) {
+        int[] array = new int[len];
+
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;
+        }
+
+        System.out.println("Создан массив длиной " + len +
+                " со значением " + initialValue + ":");
+        System.out.println(Arrays.toString(array));
+        System.out.println();  // пустая строка для разделения
+
+        return array;
+        }
 }
