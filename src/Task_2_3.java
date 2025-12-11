@@ -11,17 +11,24 @@ public class Task_2_3 {
                 "Yandex", "Россия", 21000.0, true);
         products[1] = new TechProduct("Weissgauff WM 4927", "15.02.2024",
                 "Weissgauff", "Германия", 21000.0, true);
-        products[2] = new TechProduct("Beko WSPE7612W", "10.01.2024",
-                "Beko", "Турция", 20000.0, true);
-        products[3] = new TechProduct("DeLonghi MARSELLA", "20.02.2024",
-                "DeLonghi", "Италия", 20000.0, false);
-        products[4] = new TechProduct("ARG JG80-A212VE", "05.03.2024",
-                "ARG", "Китай", 21000.0, true);
+        products[2] = new TechProduct("Tuvio WFF76HW21", "01.03.2024",
+                "Yandex", "Россия", 21000.0, true);
+        products[3] = new TechProduct("Weissgauff WM 4927", "15.02.2024",
+                "DeLonghi", "Германия", 25000.0, true);
+        products[4] = new TechProduct("Weissgauff WM 4927", "15.02.2025",
+                "Beko", "Турция", 25000.0, true);
+
 
         for(int i = 0; i < products.length; i++) {
             System.out.println((i+1) + ". " + products[i].name +
                     " - " + products[i].price + " руб.");
         }
+
+        Park park = new Park();
+
+        Park.Attraction[] parkAttractions = new Park.Attraction[2];
+        parkAttractions[0] = park.new Attraction("Карусель", "10-18", 150);
+        parkAttractions[1] = park.new Attraction("Горки", "11-20", 300);
     }
 }
 
@@ -61,5 +68,28 @@ class TechProduct {
         this.country = country;
         this.price = price;
         this.inStock = inStock;
+    }
+}
+
+class Park {
+    public class Attraction {
+        String name;
+        String workTime;
+        double price;
+
+        Attraction(String name, String workTime, double price) {
+            this.name = name;
+            this.workTime = workTime;
+            this.price = price;
+        }
+    public String getName() {
+            return name;
+}
+    public String getWorkTime() {
+            return workTime;
+    }
+    public double getPrice() {
+            return price;
+    }
     }
 }
