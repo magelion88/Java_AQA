@@ -6,7 +6,7 @@ class MyArraySizeException extends Exception {
 
 class MyArrayDataException extends Exception {
     MyArrayDataException(int i, int j, String value) {
-        super("Ошибка в [" + i + "][" + j + "]: '" + value + "' - не число");
+        super("Ошибка в [" + i + "][" + j + "]: '" + value + "' - не цифра");
     }
 }
 public class Main {
@@ -34,18 +34,15 @@ public class Main {
         String[][] testArray = {
                 {"10", "20", "30", "40"},
                 {"50", "60", "70", "80"},
-                {"90", "100", "110", "не число"},
+                {"90", "100", "110", "чеканная монета"},
                 {"130", "140", "150", "160"}
     };
     try {
         int result = checkArray(testArray);
-        // Если успешно - выводим сумму
         System.out.println("Сумма: " + result);
     } catch (MyArraySizeException e) {
-        // Ловим исключение неправильного размера
         System.out.println("Ошибка размера: " + e.getMessage());
     } catch (MyArrayDataException e) {
-        // Ловим исключение неправильных данных
         System.out.println("Ошибка данных: " + e.getMessage());
     }
     }
