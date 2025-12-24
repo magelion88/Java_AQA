@@ -31,11 +31,18 @@ public class Main {
     }
 
     public static void main(String[] args) throws MyArraySizeException {
+        try {
+            int[] test = new int[3];
+            System.out.println(test[5]);  // ← ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Тест: поймано ArrayIndexOutOfBoundsException");
+        }
+
         String[][] testArray = {
                 {"10", "20", "30", "40"},
                 {"50", "60", "70", "80"},
                 {"90", "100", "110", "чеканная монета"},
-                {"130", "140", "150", "160"}
+                {"130", "witcher", "150", "160"}
     };
     try {
         int result = checkArray(testArray);
@@ -44,6 +51,6 @@ public class Main {
         System.out.println("Ошибка размера: " + e.getMessage());
     } catch (MyArrayDataException e) {
         System.out.println("Ошибка данных: " + e.getMessage());
-    }
+        }
     }
 }
