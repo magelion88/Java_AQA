@@ -1,6 +1,18 @@
 import java.util.Scanner;
 
 public class Comparison {
+
+    // Метод для сравнения двух чисел
+    public static String compare(int a, int b) {
+        if (a > b) {
+            return a + " больше " + b;
+        } else if (a < b) {
+            return a + " меньше " + b;
+        } else {
+            return "Числа равны";
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -10,15 +22,9 @@ public class Comparison {
         System.out.print("Введите второе число: ");
         int secondNum = sc.nextInt();
 
-       if (firstNum > secondNum) {
-           System.out.println(firstNum + " больше " + secondNum);
-       }
-       else if (firstNum < secondNum) {
-               System.out.println(firstNum + " меньше " + secondNum);
-           }
-       else {
-               System.out.println("Числа равны");
-           }
-    sc.close();
+        String result = compare(firstNum, secondNum);
+        System.out.println(result);
+
+        sc.close();
     }
 }
